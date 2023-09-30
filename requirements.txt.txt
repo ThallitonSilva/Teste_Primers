@@ -1,0 +1,10 @@
+streamlit
+streamlit_ext
+pydna
+biopython
+pandas
+zipfile
+io
+XlsxWriter
+matplotlib
+openpyxl

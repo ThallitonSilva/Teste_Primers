@@ -45,8 +45,6 @@ if primers and genome:
 
     col3.write(f'O arquivo fasta inserido possui {len(list_fasta)} sequencias')
 
-    testar = col2.button('Testar os Primers!', type="primary")
-
     if ('Primer_ID' and 'Forward' and 'Reverse') not in table_primers.columns:
         st.write('O nome das colunas estão errados. Por favor, arrume!')
         st.write('Veja o exemplo fornecido.')

@@ -101,6 +101,9 @@ def verifica_primers(dataframe_primers, fasta):
             nao_passou.append([primer.Primer_ID, count, ' ;'.join(opcs)])
 
         percent += tamanho_fragmento
+        if percent >= 1:
+            percent = 0.99
+        
         my_bar.progress(percent, text=f'Primer {primer.Primer_ID} testado!')
 
     return passou_teste, nao_passou, temp_amplicons_un, temp_amplicons_all

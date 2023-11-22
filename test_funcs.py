@@ -67,13 +67,13 @@ def verifica_primers(dataframe_primers, fasta):
 
             if len(pcr_silico.products) >= 1:
                 temp_amplicons.append([gene.id, pcr_silico])
-                temp_amplicons_un.append([primer.Primer_ID, pcr_silico.products])
+                temp_amplicons_un.append([primer.Name, pcr_silico.products])
                 temp_amplicons_all.append(pcr_silico.products)
 
         count = len(temp_amplicons)
 
         if count == 0:
-            passou_teste.append([primer.Primer_ID, count, f'O primer {primer.Primer_ID} não se anelou em nenhum gene'])
+            passou_teste.append([primer.Name, count, f'O primer {primer.Primer_ID} não se anelou em nenhum gene'])
 
         if count == 1:
 
@@ -84,7 +84,7 @@ def verifica_primers(dataframe_primers, fasta):
                 #fw = p2.split()[-1]
                 #rv = p3.split()[-1]
 
-            passou_teste.append([primer.Primer_ID, count, f'O primer {primer.Primer_ID} se anelou somente no gene {gene}'])
+            passou_teste.append([primer.Name, count, f'O primer {primer.Primer_ID} se anelou somente no gene {gene}'])
 
         if count > 1:
 
@@ -96,15 +96,15 @@ def verifica_primers(dataframe_primers, fasta):
                 #p1, p2, p3 = texto.split('\n')
                 #fw = p2.split()[-1]
                 #rv = p3.split()[-1]
-                opcs.append(f'O primer {primer.Primer_ID} se anelou no gene {gene}')
+                opcs.append(f'O primer {primer.Name} se anelou no gene {gene}')
 
-            nao_passou.append([primer.Primer_ID, count, ' ;'.join(opcs)])
+            nao_passou.append([primer.Name, count, ' ;'.join(opcs)])
 
         percent += tamanho_fragmento
         if percent >= 1:
             percent = 0.99
         
-        my_bar.progress(percent, text=f'Primer {primer.Primer_ID} testado!')
+        my_bar.progress(percent, text=f'Primer {primer.Name} testado!')
 
     return passou_teste, nao_passou, temp_amplicons_un, temp_amplicons_all
 

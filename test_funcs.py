@@ -80,9 +80,9 @@ def verifica_primers(dataframe_primers, fasta):
             for ampli in temp_amplicons:
                 gene = ampli[0]
                 texto = str(ampli[1])
-                p1, p2, p3 = texto.split('\n')
-                fw = p2.split()[-1]
-                rv = p3.split()[-1]
+                #p1, p2, p3 = texto.split('\n')
+                #fw = p2.split()[-1]
+                #rv = p3.split()[-1]
 
             passou_teste.append([primer.Primer_ID, count, f'O primer {primer.Primer_ID} se anelou somente no gene {gene}'])
 
@@ -93,9 +93,9 @@ def verifica_primers(dataframe_primers, fasta):
             for ampli in temp_amplicons:
                 gene = ampli[0]
                 texto = str(ampli[1])
-                p1, p2, p3 = texto.split('\n')
-                fw = p2.split()[-1]
-                rv = p3.split()[-1]
+                #p1, p2, p3 = texto.split('\n')
+                #fw = p2.split()[-1]
+                #rv = p3.split()[-1]
                 opcs.append(f'O primer {primer.Primer_ID} se anelou no gene {gene}')
 
             nao_passou.append([primer.Primer_ID, count, ' ;'.join(opcs)])

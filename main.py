@@ -26,12 +26,12 @@ genome = col3.file_uploader('Insira o genoma (formato FASTA) no qual os primers 
                             type='fasta',
                             accept_multiple_files=False)
 
-exp = col2.expander("A tabela deve, obrigatoriamente, ter as colunas Primer_ID, Forward e Reverse. Exemplo:")
+exp = col2.expander("A tabela deve, obrigatoriamente, ter as colunas Name, Primer_ID, Forward e Reverse. Exemplo:")
 
-exemplo = [['Primer_ID', 'Forward', 'Reverse'],
-           ['Primer_1', 'CGCAGCTACAACCCACACTA', 'TGGTGGGTTCTCAACATCAA'],
-           ['Primer_2', 'TGCCATCCTTGTCTTGTACG', 'CCGCTCCAAACACTCTTCTC'],
-           ['Primer_3', 'GAGGCACAAATCCCTCAAGC', 'CCGAAAAGTACCAATATGTAACG']]
+exemplo = [['Name', 'Primer_ID', 'Forward', 'Reverse'],
+           ['Primer_1', 'AT1G60590', 'CGCAGCTACAACCCACACTA', 'TGGTGGGTTCTCAACATCAA'],
+           ['Primer_2', 'AT4G37990', 'TGCCATCCTTGTCTTGTACG', 'CCGCTCCAAACACTCTTCTC'],
+           ['Primer_3', 'AT2G33380', 'GAGGCACAAATCCCTCAAGC', 'CCGAAAAGTACCAATATGTAACG']]
 ex = pd.DataFrame(exemplo[1:], columns=exemplo[0])
 exp.write(ex)
 
